@@ -1,17 +1,14 @@
 from pyscript import display, document
 
 
-
+grade7 = {'Josua Ortiz', 'Sean Smith', 'Nathan Pascua'}
+grade8 = {'Robert Isais', 'Dan Perez', 'Mia Manalo'}
+grade9 = {'Joaquin Villar', 'Connor Cheng', 'Xydris Cruz'}
+grade10 = {'Alonzo Paulino', 'Rachmiel Lozada', 'Pocholo Comanda'}
+master_set = grade7 | grade8 | grade9 | grade10
 
 def add_member(e):
-    document.getElementById('add').innerHTML = ' '
-    fname = document.getElementById('first_name').value
-    lname = document.getElementById('last_name').value
-    grade_7 = {'Nathan Gonzales'}
-    grade_8 = {'Sean Bautista'}
-    grade_9 = {'Ethan Pascua'}
-    grade_10 = {'Rachmiel Lozada'}
-    master_set = grade_7 | grade_8 | grade_9 | grade_10
-    master_set.add(fname and lname)
-
-    display(master_set, target='add')
+    first = document.getElementById("first_name").value
+    last = document.getElementById("last_name").value
+    master_set.add(first + " " + last)
+    document.getElementById("add").innerHTML = f"{master_set} Total Members: {len(master_set)}"
